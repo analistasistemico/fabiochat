@@ -31,22 +31,25 @@ def handle_join(data):
     emit('history', message_history[language], room=request.sid)
 
 @socketio.on('message')
-def handle_message(data):
+ handle_message(data):
     language = data['language']
     username = data['username']
     message = data['message']
-    print(f'{username}: {message} ({language})')
+    timestamp = datetime.datetime.now().strftime('%H:%M:%S')
+    print(f'{username}: {message} ({language}) - {timestamp}')
     
     # Traduzir a mensagem para todos os idiomas
     translated_messages = {}
     for lang in message_history.keys():
         translated_message = translate_text(message, language, lang)
-        translated_messages[lang] = f'{username}: {translated_message}'
+        translated_messages[lang] = f'{username}: {translated_message} - {timestamp}'
     
     # Adicionar a mensagem ao histórico e emitir para todos os clientes
     for lang, msg in translated_messages.items():
         message_history[lang].append(msg)
         emit('message', msg, room=lang)
+
+    save_message_history()
 
 if __name__ == '__main__':
     socketio.run(app)
