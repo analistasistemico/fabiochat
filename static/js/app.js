@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     socket.on('message', function(data) {
-        const messageElement = document.createElement('div');
+       const messageElement = document.createElement('div');
         messageElement.textContent = data;
         messageArea.appendChild(messageElement);
         messageArea.scrollTop = messageArea.scrollHeight;
