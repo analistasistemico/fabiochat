@@ -1,0 +1,26 @@
+<!-- index.html -->
+<body>
+  <div class="welcome-page">
+    <h1>Bem-vindo ao nosso bate-papo!</h1>
+    <label for="language-select">Selecione o idioma:</label>
+    <select id="language-select">
+      <option value="pt-BR">Português (Brasil)</option>
+      <option value="en-US">Inglês (EUA)</option>
+      <option value="es-ES">Espanhol (Espanha)</option>
+    </select>
+    <button id="start-chat">Iniciar bate-papo</button>
+  </div>
+
+  <div class="chat-room hidden">
+    <div class="message-area">
+      <!-- As mensagens serão exibidas aqui -->
+    </div>
+    <div class="input-area">
+      <input type="text" id="message-input" placeholder="Digite sua mensagem">
+      <button id="send-button">Enviar</button>
+    </div>
+    <div class="status-area">
+      <!-- Mensagens de entrada e saída de usuários serão exibidas aqui -->
+    </div>
+  </div>
+</body>
