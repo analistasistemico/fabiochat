@@ -1,0 +1,10 @@
+/* style.css */
+.hidden { display: none; }
+
+.welcome-page, .chat-room { padding: 20px; text-align: center; }
+
+.message-area { height: 300px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; }
+
+.input-area { margin-top: 20px; }
+
+.status-area { margin-top: 20px; }
